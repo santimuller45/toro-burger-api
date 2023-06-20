@@ -1,6 +1,8 @@
 const { Users } = require("../db.js");
 const { userAdmin } = require("../helpers/admin.js");
 
+// CREAMOS EL ADMIN POR DEFAULT EN LA DB
+
 const createAdmin = async () => {
   return await Users.create( userAdmin )
 };

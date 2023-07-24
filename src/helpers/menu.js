@@ -3,19 +3,19 @@ const nuggetsURL = 'https://cdn.pixabay.com/photo/2023/05/16/09/50/ai-generated-
 
 const menuToro = [
     {
-        name: "Nuggets de Pollo SMALL",
+        name: "NUGGETS DE POLLO SMALL",
         image: nuggetsURL,
         description: "6 unidades + PORCIÓN DE FRITAS",
         price: 1300
     },
     {
-        name: "Nuggets de Pollo BIG",
+        name: "NUGGETS DE POLLO BIG",
         image: nuggetsURL,
         description: "12 UNIDADES + PORCIÓN DE FRITAS",
         price: 2200
     },
     {
-        name: "Menú NIÑOS",
+        name: "MENÚ NIÑOS",
         image: hamburguesaURL,
         description: "HAMBURGUESA CON QUESO / HAMGURGUESA CON HUEVO / HAMBURGUESA SOLA",
         price: 1400

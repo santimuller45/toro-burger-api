@@ -8,7 +8,7 @@ const { menuToro } = require('../helpers/menu.js')
 const getHelperMenu = async () => {
   return await Foods.bulkCreate( menuToro );
 }
-
+const mayusLetter = (string) => string.toUpperCase();
 ////////////////////////////////////////////////////////////////////
 
 const getAllMenu = async () => {
@@ -16,9 +16,11 @@ const getAllMenu = async () => {
 };
   
 const getFoodByName = async (name) => {
-  return await Foods.findAll({ 
-    where: { name: { [Op.substring]: `${name}` }}
-  });
+   const foodName = mayusLetter(name)
+  return await Foods.findAll({
+    where: { 
+      name: {[Op.substring]:`${foodName}`}
+    }})
 };
   
 const getFoodByID = async(foodID) => {

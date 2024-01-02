@@ -1,6 +1,6 @@
 const app = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const PORT = 3001;
+const { PORT } = process.env;
 
 const { getHelperMenu } = require('./src/controllers/foodControllers.js');
 const { createAdmin } = require("./src/controllers/usersControllers.js");

@@ -31,7 +31,7 @@ const postFoodController = async (food) => {
   return await Foods.create(food);
 };
 
-const putFoodController = async (food) => {
+const putFoodController = async ( food ) => {
   const findFoodByID = await Foods.findByPk(food.id);
   if (findFoodByID === null) return null;
   food.name ? findFoodByID.name = food.name : null;

@@ -19,9 +19,13 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
       defaultValue: 0,
     },
+    comentary: {
+      type: DataTypes.STRING,
+      defaultValue:'empty'
+    },
     orderStatus: {
       type: DataTypes.STRING,
-      defaultValue: 'Cart',
+      defaultValue: 'PENDING',
     },
     updated: {
       type: DataTypes.DATE,

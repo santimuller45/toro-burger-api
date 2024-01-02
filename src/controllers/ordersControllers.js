@@ -1,14 +1,20 @@
 const { Orders } = require('../db.js');
 
-const getAllOrders = async () => {
+const getAllOrdersController = async () => {
     return await Orders.findAll();
 };
 
-const getOrderById = async (id) => {
+const getOrderByIdController = async ( id ) => {
     return await Orders.findByPk(id);
 };
 
+const createOrderController = async ( amount, shipping, totalAmount, comentary, orderStatus ) => {
+    const newOrder = await Orders.create({ amount, shipping, totalAmount, comentary, orderStatus });
+    return newOrder;
+}
+
 module.exports = {
-    getAllOrders,
-    getOrderById
+    getAllOrdersController,
+    getOrderByIdController,
+    createOrderController
 }

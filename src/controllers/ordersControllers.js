@@ -8,8 +8,8 @@ const getOrderByIdController = async ( id ) => {
     return await Orders.findByPk(id);
 };
 
-const createOrderController = async ( amount, shipping, totalAmount, comentary, orderStatus ) => {
-    const newOrder = await Orders.create({ amount, shipping, totalAmount, comentary, orderStatus });
+const createOrderController = async ( foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType ) => {
+    const newOrder = await Orders.create({ foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType });
     return newOrder;
 }
 

@@ -7,6 +7,9 @@ module.exports = (sequelize) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
+    foodOrder: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+    },
     amount: {
       type: DataTypes.FLOAT,
       defaultValue: 0,
@@ -26,6 +29,10 @@ module.exports = (sequelize) => {
     orderStatus: {
       type: DataTypes.STRING,
       defaultValue: 'PENDING',
+    },
+    paymenType: {
+      type: DataTypes.STRING,
+      defaultValue:'EFECTIVO/MERCADOPAGO'
     },
     updated: {
       type: DataTypes.DATE,

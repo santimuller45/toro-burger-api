@@ -22,9 +22,9 @@ const handlerGetOrderById = async ( req, res ) => {
 };
 
 const handlerCreateOrder = async (req, res) => {
-    const { amount, shipping, totalAmount, comentary, orderStatus } = req.body;
+    const { foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType } = req.body;
     try {
-        const order = await createOrderController(amount, shipping, totalAmount, comentary, orderStatus);
+        const order = await createOrderController(foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType );
         if (order === null) throw Error("Can't create order");
         res.status(200).json(order);
     } catch (error) {

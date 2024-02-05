@@ -1,4 +1,4 @@
-const { Users } = require("../db.js");
+const { Users , Orders } = require("../db.js");
 const { userAdmin } = require("../helpers/admin.js");
 
 // CREAMOS EL ADMIN POR DEFAULT EN LA DB
@@ -34,15 +34,11 @@ const getAllUsersDB = async () => {
 
 const getUser = async ( email ) => {
   const findUser = await Users.findByPk(email, {
-    include: [
+    include:
       {
         model: Orders,
-        attributes: ['id'],
-        through: {
-          attributes: [],
-        }
+        attributes: ['id']
       }
-    ]
   });
   if (!findUser) throw Error("User did not found");
   else return findUser;

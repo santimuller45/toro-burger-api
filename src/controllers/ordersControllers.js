@@ -12,9 +12,17 @@ const getOrderByIdController = async ( id ) => {
     return await Orders.findByPk(id, 
         { include: { 
             model: Users,
-            attributes:["email"],
+            attributes:["email","firstname","lastname"],
         }});
 };
+
+const putOrderByIdController = async ( id , status) => {
+    const orderToModify = await Orders.findByPk(id);
+    if (orderToModify === null) throw Error("Couldn't find order");
+    orderToModify.orderStatus = status;
+    orderToModify.save();
+    return orderToModify;
+}
 
 const createOrderController = async ( foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType, userEmail ) => {
     const newOrder = await Orders.create({ foodOrder, amount, shipping, totalAmount, comentary, orderStatus, paymenType });
@@ -26,5 +34,6 @@ const createOrderController = async ( foodOrder, amount, shipping, totalAmount, 
 module.exports = {
     getAllOrdersController,
     getOrderByIdController,
+    putOrderByIdController,
     createOrderController
 }

@@ -3,11 +3,11 @@ const { getAllMenuController, getFoodByNameController, getFoodByIDController, po
 const handlerGetMenu = async (req, res) => {
     const { name } = req.query;
     try {
-      const productsArray = name 
+      const foodName = name 
         ? await getFoodByNameController(name)
         : await getAllMenuController()
-      if (productsArray.length < 1) throw Error('Food not founded');
-      res.status(200).json(productsArray);
+      if (foodName.length < 1) throw Error('Food did not found');
+      res.status(200).json(foodName);
     } catch (error) {
       res.status(400).send(error.message);
     };  

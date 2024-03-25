@@ -3,9 +3,9 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   sequelize.define("orders", {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      defaultValue: DataTypes.UUIDV4,
+      autoIncrement: true
     },
     foodOrder: {
       type: DataTypes.ARRAY(DataTypes.STRING),

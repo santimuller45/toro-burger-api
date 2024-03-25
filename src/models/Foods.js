@@ -36,6 +36,10 @@ module.exports = (sequelize) => {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
     },
+    category: {
+      type: DataTypes.STRING,
+      defaultValue: ""
+    },
     averageRating: {
       type: DataTypes.INTEGER,
       defaultValue: 0,

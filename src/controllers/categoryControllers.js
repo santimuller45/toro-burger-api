@@ -1,5 +1,5 @@
 const { Categorys } = require("../db.js");
-const { categoryHelper } = require('../helpers/category.js');
+const { categoryHelper } = require('../helpers/categoryHelper.js');
 
 const createCategorys = async () => {
     return await Categorys.bulkCreate( categoryHelper );

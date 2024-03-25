@@ -1,11 +1,7 @@
 const categoryHelper = [
     {
-        name: 'Hamburguesas',
-      description: 'Hamburguesas'
-    },
-    {
-        name: 'Otros',
-        description: 'Menú otros'
+        name: 'Menu',
+      description: 'Menu'
     },
     {
         name: 'Acompañamientos',

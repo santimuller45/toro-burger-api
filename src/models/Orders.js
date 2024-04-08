@@ -32,7 +32,7 @@ module.exports = (sequelize) => {
     },
     paymenType: {
       type: DataTypes.STRING,
-      defaultValue:'EFECTIVO/MERCADOPAGO'
+      defaultValue:'EFECTIVO/TRANSFERENCIA'
     },
     updated: {
       type: DataTypes.DATE,

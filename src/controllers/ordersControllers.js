@@ -20,7 +20,7 @@ const putOrderByIdController = async ( id , status) => {
     const orderToModify = await Orders.findByPk(id);
     if (orderToModify === null) throw Error("Couldn't find order");
     orderToModify.orderStatus = status;
-    orderToModify.save();
+    await orderToModify.save();
     return orderToModify;
 }
 

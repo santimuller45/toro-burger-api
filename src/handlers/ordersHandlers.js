@@ -1,4 +1,9 @@
-const { getAllOrdersController , getOrderByIdController, putOrderByIdController, createOrderController } = require('../controllers/ordersControllers.js');
+const { 
+    getAllOrdersController,
+    getOrderByIdController,
+    putOrderByIdController,
+    createOrderController
+} = require('../controllers/ordersControllers.js');
 
 const handlerGetAllOrders = async ( req , res ) => {
     try {
